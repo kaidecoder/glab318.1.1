@@ -38,6 +38,12 @@ const server = http.createServer((req,res) => {
         })
         res.write("<html><body><p>Admin Page</p></body></html>")
         res.end()
+    }else if(req.url === "/api"){
+        res.writeHead(200, {"Content-Type": "application/json"})
+        res.end(JSON.stringify({
+            firstName: "Bruce",
+            lastName: "Wayne"
+        }))
     }else{
         res.end("Invalid Request")
     }
